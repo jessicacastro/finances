@@ -1,10 +1,10 @@
 import { useState } from 'react'
+import { TransactionsProvider } from './hooks/useTransaction'
 
 import Modal from 'react-modal'
 
 import { GlobalStyle } from './styles/global'
 
-import { TransactionsProvider } from './contexts/TransactionsContext'
 
 import { Header } from './components/Header'
 import { Dashboard } from './components/Dashboard'
