@@ -33,9 +33,9 @@ export const TransactionsProvider = ({ children }: TransactionsProviderProps) =>
   }, [])
 
   const createTransaction = async (transaction: TransactionInput) => {
-    const response = await api.post('/transactions', transaction);
+    const response = await api.post('/transactions', transaction)
 
-    const { transaction: createdTransaction } = response.data;
+    const { transaction: createdTransaction } = response.data
 
     setTransactions([...transactions, createdTransaction])
   }
