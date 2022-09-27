@@ -10,8 +10,8 @@ export const Header = ({ onOpenNewTransactionModal }: HeaderProps) => {
   return (
     <HeaderContainer>
       <ContentContainer>
-        <img src={logoImg} alt="finances" />
-        <button onClick={onOpenNewTransactionModal} type="button">Nova transação</button>
+        <img src={logoImg} alt='finances' />
+        <button onClick={onOpenNewTransactionModal} type='button'>Nova transação</button>
       </ContentContainer>
     </HeaderContainer>
   );

@@ -36,7 +36,7 @@ export const TransactionsTable = () => {
         </tbody>
       </table>
 
-      <p>Made with &hearts; by <a href="https://linkedin.com/in/jessicacastros">Jessica Castro</a></p>
+      <p>Made with &hearts; by <a href='https://linkedin.com/in/jessicacastros'>Jessica Castro</a></p>
     </TransactionsTableContainer>
   )
 }

@@ -34,7 +34,7 @@ export const Summary = () => {
       <article>
         <header>
           <p>Entradas</p>
-          <img src={incomeImg} alt="Entradas" />
+          <img src={incomeImg} alt='Entradas' />
         </header>
 
         <strong>{formatValueToBRL(summary.deposits)}</strong>
@@ -43,16 +43,16 @@ export const Summary = () => {
       <article>
         <header>
           <p>Saídas</p>
-          <img src={outcomeImg} alt="Saídas" />
+          <img src={outcomeImg} alt='Saídas' />
         </header>
 
         <strong>- {formatValueToBRL(summary.withdraws)}</strong>
       </article>
 
-      <article className="highlight-background">
+      <article className='highlight-background'>
         <header>
           <p>Total</p>
-          <img src={totalImg} alt="Total" />
+          <img src={totalImg} alt='Total' />
         </header>
 
         <strong>{formatValueToBRL(summary.total)}</strong>

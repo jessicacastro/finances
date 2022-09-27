@@ -50,8 +50,8 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
       overlayClassName='react-modal-overlay'
       className='react-modal-content'>
 
-      <button type="button" onClick={onRequestClose} className='react-modal-close'>
-        <img src={closeImg} alt="Fechar modal" />
+      <button type='button' onClick={onRequestClose} className='react-modal-close'>
+        <img src={closeImg} alt='Fechar modal' />
       </button>
 
       <NewTransactionModalContainer onSubmit={handleCreateNewTransaction} >
@@ -60,30 +60,30 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
         <input
           value={title}
           onChange={event => setTitle(event.target.value)}
-          type="text"
+          type='text'
           placeholder='Título' />
 
         <input
           value={amount}
           onChange={event => setAmount(Number(event.target.value))}
-          type="number"
+          type='number'
           placeholder='Valor' />
 
         <TransactionTypeContainer>
           <ButtonType
-            type="button"
+            type='button'
             onClick={() => setType('deposit')}
             isActive={type === 'deposit'}
             activeColor='green'>
-            <img src={incomeImg} alt="Entrada" />
+            <img src={incomeImg} alt='Entrada' />
             <span>Entrada</span>
           </ButtonType>
           <ButtonType
-            type="button"
+            type='button'
             onClick={() => setType('withdraw')}
             isActive={type === 'withdraw'}
             activeColor='red'>
-            <img src={outcomeImg} alt="Saída" />
+            <img src={outcomeImg} alt='Saída' />
             <span>Saída</span>
           </ButtonType>
         </TransactionTypeContainer>
@@ -91,10 +91,10 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
         <input
           value={category}
           onChange={event => setCategory(event.target.value)}
-          type="text"
+          type='text'
           placeholder='Categoria' />
 
-        <button type="submit">Cadastrar</button>
+        <button type='submit'>Cadastrar</button>
       </NewTransactionModalContainer>
     </Modal>
   )

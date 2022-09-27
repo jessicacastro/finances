@@ -29,7 +29,7 @@ export const NewTransactionModalContainer = styled.form`
 
   }
 
-  button[type="submit"] {
+  button[type='submit'] {
     width: 100%;
     padding: 0 1.5rem;
     height: 4rem;
@@ -58,7 +58,7 @@ export const TransactionTypeContainer = styled.div`
 
 interface ButtonTypeProps {
   isActive: boolean;
-  activeColor: "green" | "red";
+  activeColor: 'green' | 'red';
 }
 
 export const ButtonType = styled.button<ButtonTypeProps>`
@@ -78,7 +78,7 @@ export const ButtonType = styled.button<ButtonTypeProps>`
 
 
   &:hover {
-    border-color: ${darken(0.1, "#d7d7d7")};
+    border-color: ${darken(0.1, '#d7d7d7')};
   }
 
 
