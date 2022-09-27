@@ -1,13 +1,13 @@
-import { useContext } from "react"
-import { TransactionsContext } from "../../contexts/TransactionsContext"
+import { useContext } from 'react'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
 
-import { formatDateToBR } from "../../utils/formatDateToBR"
-import { formatValueToBRL } from "../../utils/formatValueToBRL"
+import { formatDateToBR } from '../../utils/formatDateToBR'
+import { formatValueToBRL } from '../../utils/formatValueToBRL'
 
-import { TransactionsTableContainer } from "./styles"
+import { TransactionsTableContainer } from './styles'
 
 export const TransactionsTable = () => {
-  const transactions = useContext(TransactionsContext)
+  const { transactions } = useContext(TransactionsContext)
 
   return(
     <TransactionsTableContainer>
@@ -38,6 +38,5 @@ export const TransactionsTable = () => {
 
       <p>Made with &hearts; by <a href="https://linkedin.com/in/jessicacastros">Jessica Castro</a></p>
     </TransactionsTableContainer>
-
   )
 }

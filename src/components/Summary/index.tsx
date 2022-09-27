@@ -1,18 +1,33 @@
-import { useContext } from "react"
+import { useContext } from 'react'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
 
-import { TransactionsContext } from "../../contexts/TransactionsContext"
+import { formatValueToBRL } from '../../utils/formatValueToBRL'
 
-import { SummaryContainer } from "./styles"
+import incomeImg from '../../assets/income.svg'
+import outcomeImg from '../../assets/outcome.svg'
+import totalImg from '../../assets/total.svg'
 
-import incomeImg from "../../assets/income.svg"
-import outcomeImg from "../../assets/outcome.svg"
-import totalImg from "../../assets/total.svg"
+import { SummaryContainer } from './styles'
+
 
 export const Summary = () => {
-  const transactions = useContext(TransactionsContext)
+  const { transactions } = useContext(TransactionsContext)
+  
+  const summary = transactions.reduce((acc, transaction) => {
+    if (transaction.type === 'deposit') {
+      acc.deposits += transaction.amount
+      acc.total += transaction.amount
+    } else {
+      acc.withdraws += transaction.amount
+      acc.total -= transaction.amount
+    }
 
-  const calculateIncomeTotal = () => 
-    transactions.reduce((sum, transaction) => transaction.type === 'deposit' ? sum + transaction.amount : 0, 0)
+    return acc
+  }, {
+    deposits: 0,
+    withdraws: 0,
+    total: 0,
+  })
 
   return(
     <SummaryContainer>
@@ -22,7 +37,7 @@ export const Summary = () => {
           <img src={incomeImg} alt="Entradas" />
         </header>
 
-        <strong>R$1000,00</strong>
+        <strong>{formatValueToBRL(summary.deposits)}</strong>
       </article>
 
       <article>
@@ -31,7 +46,7 @@ export const Summary = () => {
           <img src={outcomeImg} alt="Saídas" />
         </header>
 
-        <strong>- R$500,00</strong>
+        <strong>- {formatValueToBRL(summary.withdraws)}</strong>
       </article>
 
       <article className="highlight-background">
@@ -40,7 +55,7 @@ export const Summary = () => {
           <img src={totalImg} alt="Total" />
         </header>
 
-        <strong>R$500,00</strong>
+        <strong>{formatValueToBRL(summary.total)}</strong>
       </article>
     </SummaryContainer>
   )

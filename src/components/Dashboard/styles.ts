@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const DashboardContainer = styled.main`
   max-width: 1220px;

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { darken, transparentize } from "polished";
-import { COLORS } from "../../utils/contants";
+import styled from 'styled-components'
+import { darken, transparentize } from 'polished';
+import { COLORS } from '../../utils/contants';
 
 export const NewTransactionModalContainer = styled.form`
   h2 {
