@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { darken } from "polished";
+import { darken, transparentize } from "polished";
+import { COLORS } from "../../utils/contants";
 
 export const NewTransactionModalContainer = styled.form`
   h2 {
@@ -52,23 +53,33 @@ export const TransactionTypeContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
-
-  button {
-    height: 4rem;
-    border: 1px solid var(--input-border);
-    border-radius: 0.25rem;
-    background-color: transparent;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-
-    transition: border-color 0.2s;
-
-
-    &:hover {
-      border-color: ${darken(0.1, "#d7d7d7")};
-    }
-  }
 `;
+
+
+interface ButtonTypeProps {
+  isActive: boolean;
+  activeColor: "green" | "red";
+}
+
+export const ButtonType = styled.button<ButtonTypeProps>`
+  height: 4rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.25rem;
+  background-color: ${(props) => props.isActive ? 
+    transparentize(0.9, COLORS[props.activeColor]) 
+    : 'transparent'};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  transition: border-color 0.2s;
+
+
+  &:hover {
+    border-color: ${darken(0.1, "#d7d7d7")};
+  }
+
+
+`
